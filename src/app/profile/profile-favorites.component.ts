@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { ArticleListConfig, Profile } from '../shared';
+import { Profile } from '../shared';
 
 @Component({
   selector: 'profile-favorites',
@@ -14,13 +14,11 @@ export class ProfileFavoritesComponent implements OnInit {
   ) {}
 
   profile: Profile;
-  favoritesConfig: ArticleListConfig = new ArticleListConfig();
 
   ngOnInit() {
     this.route.parent.data.subscribe(
       (data: {profile: Profile}) => {
         this.profile = data.profile;
-        this.favoritesConfig.filters.favorited = this.profile.username;
       }
     );
   }

@@ -3,17 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { ArticleModule } from './article/article.module';
 import { AuthModule } from './auth/auth.module';
-import { EditorModule } from './editor/editor.module';
 import { HomeModule } from './home/home.module';
 import { ProfileModule } from './profile/profile.module';
 import { SettingsModule } from './settings/settings.module';
+import { RegistrationModule } from './registration/registration.module';
+
 import {
   ApiService,
-  ArticlesService,
   AuthGuard,
-  CommentsService,
   FooterComponent,
   HeaderComponent,
   JwtService,
@@ -33,20 +31,17 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: tru
   ],
   imports: [
     BrowserModule,
-    ArticleModule,
     AuthModule,
-    EditorModule,
     HomeModule,
     ProfileModule,
     rootRouting,
     SharedModule,
-    SettingsModule
+    SettingsModule,
+    RegistrationModule
   ],
   providers: [
     ApiService,
-    ArticlesService,
     AuthGuard,
-    CommentsService,
     JwtService,
     ProfilesService,
     TagsService,

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { ArticleListConfig, TagsService, UserService } from '../shared';
+import { TagsService, UserService } from '../shared';
 
 @Component({
   selector: 'home-page',
@@ -16,7 +16,6 @@ export class HomeComponent implements OnInit {
   ) {}
 
   isAuthenticated: boolean;
-  listConfig: ArticleListConfig = new ArticleListConfig();
   tags: Array<string> = [];
   tagsLoaded: boolean = false;
 
@@ -49,6 +48,6 @@ export class HomeComponent implements OnInit {
     }
 
     // Otherwise, set the list object
-    this.listConfig = {type:type, filters:filters};
+   // this.listConfig = {type:type, filters:filters};
   }
 }
