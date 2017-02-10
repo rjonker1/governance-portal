@@ -4,17 +4,17 @@ import { RouterModule } from '@angular/router';
 import { AuthGuard, SharedModule } from '../shared';
 
 //import { EditableRegistrationResolver } from './editable-registration-resolver.service';
-import { RegistrationSubscriptionTypeComponent } from './registration-subscription.component'
+import { RegistrationComponent } from './registration.component'
 
 const registrationRouting: ModuleWithProviders = RouterModule.forChild([
     {
         path: 'registration',
-        component: RegistrationSubscriptionTypeComponent,
+        component: RegistrationComponent,
         canActivate: [AuthGuard]
     },    
     {
         path: 'registration/:slug',
-        component: RegistrationSubscriptionTypeComponent,
+        component: RegistrationComponent,
         canActivate: [AuthGuard] //,
         // resolve: {
         //     registration: 
@@ -28,7 +28,7 @@ const registrationRouting: ModuleWithProviders = RouterModule.forChild([
         SharedModule
     ],
     declarations: [
-        RegistrationSubscriptionTypeComponent
+        RegistrationComponent
     ],
     providers: [
 
